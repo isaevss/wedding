@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Свадебное приглашение — Александр и Юлия</title>
+<style>
+:root{--p:#6f002c;--s:#F0E0D1;--bg:#FBF5EC;--fg:#45272A;--body:'Palatino Linotype','Book Antiqua',serif;--head:'Palatino Linotype','Book Antiqua',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--body);background-color:var(--bg);background-image:url('assets/site-backdrop.webp');background-size:cover;background-position:center top;background-repeat:no-repeat;background-attachment:fixed;color:var(--fg)}#site-root{min-height:100vh;overflow:hidden}.site-shell{max-width:none;width:100%;margin:0;padding:0}
+.preview-note{margin:0;padding:12px;text-align:center;background:var(--p);color:white;font-size:12px;letter-spacing:.08em}
+button,.btn{border:1px solid var(--p);border-radius:999px;padding:11px 17px;background:transparent;color:var(--fg);cursor:pointer;font:inherit}
+.btn.primary{background:var(--p);color:white}
+.hero{border-bottom:5px double var(--p);position:relative;text-align:center;padding:clamp(60px,10vw,118px) 18px;background:var(--s);margin-top:16px;overflow:hidden}
+.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:11px}h1,h2,h3{font-family:var(--head);font-weight:400}
+h1{font-size:clamp(44px,8vw,88px);line-height:1.02;margin:22px 0}.amp{font-style:italic;color:var(--p)}
+.hero p{line-height:1.8;max-width:440px;margin:0 auto}.date-line{margin-top:30px!important;font-size:14px;letter-spacing:.16em}
+.hero .btn{display:inline-block;margin-top:30px;text-decoration:none;position:relative;z-index:1}
+.section{padding:clamp(42px,7vw,76px) 8px;text-align:center}.section h2{font-size:clamp(30px,5vw,46px);margin:12px 0 18px}.lead{max-width:620px;line-height:1.8;margin:0 auto}
+.countdown{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}.count-box{min-width:86px;padding:16px 12px;background:var(--s);border-radius:4px}
+.count-box strong{display:block;font-size:32px;font-weight:400}.count-box span{display:block;margin-top:5px;font-size:10px;text-transform:uppercase}
+.timeline{max-width:620px;margin:28px auto;text-align:left}.timeline-item{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid #bba9a0}
+.timeline-item time{color:var(--p);font-weight:bold}.timeline-item strong{font-size:20px;font-weight:700}.timeline-item p{margin:6px 0;line-height:1.6;font-size:14px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;text-align:left}.info-card{padding:28px;background:var(--s);border-radius:5px}
+.transfer-note{max-width:700px;margin:20px auto 0;padding:18px 22px;background:var(--bg);border-left:3px solid var(--p);line-height:1.7;text-align:left}
+.info-card h3{font-size:25px;margin:0 0 12px}.info-card p{line-height:1.7}.small-note{font-size:12px;opacity:.8}.palette{display:flex;justify-content:center;gap:12px;margin:20px auto 8px}.palette span{display:block;width:24px;height:24px;border-radius:50%;border:1px solid rgba(69,39,42,.18)}.palette-labels{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;font-size:10px;opacity:.8}
+.rsvp-wrap{background:var(--p);color:white;padding:clamp(32px,6vw,60px);margin:10px 0 40px}.rsvp-wrap h2{text-align:center;font-size:clamp(32px,5vw,44px);margin:0 0 10px}.rsvp-wrap .lead{text-align:center;margin-bottom:28px}
+form{max-width:650px;margin:auto}.field{margin:18px 0}label,.field-title{display:block;margin-bottom:8px;font-size:13px}
+input[type=text],textarea{display:block;width:100%;border:1px solid #b99da0;border-radius:4px;padding:13px 14px;background:#6f002c;color:white;font:inherit}input::placeholder,textarea::placeholder{color:#ead9d9}
+.choice-row{display:flex;gap:10px;flex-wrap:wrap}.choice{display:flex;gap:8px;align-items:center;padding:9px 12px;border:1px solid #c9aeb0;border-radius:999px;font-size:13px;cursor:pointer}.choice input{accent-color:var(--s)}
+.rsvp-wrap .btn{color:var(--fg);background:var(--s);border-color:var(--s);margin-top:8px;width:100%}
+#form-message{display:none;margin-top:18px;padding:14px;background:var(--s);color:var(--fg);line-height:1.5}
+footer{text-align:center;padding:0 16px 36px;font-size:24px}footer small{display:block;margin-top:10px;font-family:Arial,sans-serif;font-size:11px;letter-spacing:.1em}
+@media(max-width:600px){.site-shell{padding:12px}.two-col{grid-template-columns:1fr}.timeline-item{grid-template-columns:68px 1fr;gap:12px}.count-box{min-width:72px}.rsvp-wrap{padding:28px 18px}}
+
+
+/* Full-page warm plaster backdrop with the garland and flowers kept behind all sections. */
+.photo-garland{display:none}
+.hero{
+ min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;
+ padding:250px 18px 108px;background:transparent;border-bottom:0;margin:0;overflow:hidden;text-align:center;position:relative
+}
+.hero>.eyebrow,.hero>h1,.hero>p,.hero>.btn{position:relative;z-index:1}
+.hero .eyebrow{font-size:13px;letter-spacing:.09em;color:var(--p);margin:0 auto 12px;max-width:620px}
+.hero h1{margin:18px 0 14px}
+.hero .date-line{margin-top:22px!important}
+.section{background:transparent}
+.section[style*="background:var(--s)"]{background:rgba(240,224,209,.70)!important;backdrop-filter:blur(1px)}
+.count-box{background:rgba(240,224,209,.82)}
+.info-card{background:rgba(240,224,209,.86)}
+.transfer-note{background:rgba(251,245,236,.88)}
+@media(max-width:700px){
+ body{background-attachment:scroll;background-size:cover;background-position:center top}
+ .hero{min-height:650px;padding:235px 10px 82px}
+ .hero h1{font-size:clamp(40px,11vw,64px)}
+}
+
+/* Mobile layout: keep the backdrop anchored to the screen and give the hero room to breathe. */
+@media(max-width:700px){
+ html,body{min-height:100%;}
+ body{background:var(--bg);background-image:none;background-attachment:scroll;}
+ body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url('assets/site-backdrop.webp');background-size:cover;
+  background-position:center top;background-repeat:no-repeat;
+ }
+ #site-root{position:relative;z-index:1;overflow:hidden;}
+ .preview-note{padding:10px 12px;font-size:11px;letter-spacing:.12em;line-height:1.3;}
+ .site-shell{width:100%;padding:0;margin:0;}
+ .hero{
+  min-height:620px;height:auto;padding:150px 20px 54px;margin:0;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  background:transparent;border:0;overflow:visible;
+ }
+ .hero .eyebrow{font-size:10px;line-height:1.5;letter-spacing:.12em;margin:0 auto 12px;max-width:300px;}
+ .hero h1{font-size:clamp(42px,12vw,54px);line-height:1.02;margin:10px 0 12px;}
+ .hero p{font-size:16px;line-height:1.55;max-width:310px;}
+ .hero .date-line{font-size:12px;letter-spacing:.17em;margin-top:17px!important;}
+ .hero .btn{font-size:14px;padding:12px 18px;margin-top:20px;}
+ .section{padding:34px 16px;text-align:center;}
+ .section h2{font-size:30px;margin:8px 0 16px;}
+ .lead{font-size:14px;line-height:1.6;padding:0 4px;}
+ .countdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;max-width:290px;margin:20px auto 0;}
+ .count-box{min-width:0;padding:12px 8px;border-radius:5px;}
+ .count-box strong{font-size:27px;line-height:1.1;}
+ .count-box span{font-size:9px;letter-spacing:.06em;}
+ .timeline{margin:18px auto 20px;max-width:100%;}
+ .timeline-item{grid-template-columns:56px minmax(0,1fr);gap:10px;padding:13px 0;}
+ .timeline-item time{font-size:13px;}
+ .timeline-item strong{font-size:16px;line-height:1.3;}
+ .timeline-item p{font-size:12px;line-height:1.5;margin:5px 0 0;overflow-wrap:anywhere;}
+ .transfer-note{font-size:13px;line-height:1.55;margin:14px 0 0;padding:14px 15px;}
+ .two-col{display:grid;grid-template-columns:1fr!important;gap:12px;margin:18px auto 0!important;}
+ .info-card{padding:20px 16px;border-radius:6px;}
+ .info-card h3{font-size:22px;margin-bottom:8px;}
+ .info-card p{font-size:13px;line-height:1.6;margin:0;}
+ .palette{gap:10px;margin:16px auto 4px;}
+ .palette span{width:22px;height:22px;}
+ .rsvp-wrap{padding:28px 16px;margin:8px 0 28px;}
+ .rsvp-wrap h2{font-size:30px;margin-bottom:8px;}
+ .rsvp-wrap .lead{font-size:13px;margin-bottom:20px;}
+ form{max-width:100%;}
+ .field{margin:15px 0;}
+ label,.field-title{font-size:12px;line-height:1.45;}
+ .choice-row{gap:7px;}
+ .choice{font-size:12px;padding:8px 10px;line-height:1.3;}
+ input[type=text],textarea{font-size:14px;padding:11px 12px;}
+ .rsvp-wrap .btn{font-size:15px;padding:12px 14px;}
+ footer{font-size:19px;padding:0 12px 28px;}
+ footer small{font-size:10px;}
+}
+@media(max-width:380px){
+ .hero{min-height:590px;padding:132px 16px 44px;}
+ .hero h1{font-size:42px;}
+ .hero p{font-size:15px;}
+ .timeline-item{grid-template-columns:50px minmax(0,1fr);gap:8px;}
+ .timeline-item strong{font-size:15px;}
+ .choice{font-size:11px;padding:7px 9px;}
+}
+
+
+/* One continuous photographic wall across every mobile section. No overlays, fades or seams. */
+@media(max-width:700px){
+ html{background:#e9bb8f;}
+ body{
+  background-color:#e9bb8f!important;
+  background-image:url('assets/continuous-wall.webp')!important;
+  background-size:100% auto!important;
+  background-repeat:no-repeat!important;
+  background-position:center top!important;
+  background-attachment:scroll!important;
+ }
+ body::before,#site-root::before{display:none!important;content:none!important;}
+ #site-root{position:relative;min-height:100vh;overflow:hidden;background:transparent;}
+ .site-shell{position:relative;z-index:1;}
+ .preview-note{position:relative;z-index:2;}
+ .hero{height:auto!important;min-height:510px!important;padding:146px 16px 48px!important;justify-content:flex-start!important;background:transparent!important;}
+ .hero .eyebrow{margin-bottom:10px!important;}
+ .hero h1{margin:10px 0 12px!important;}
+ .hero .date-line{margin-top:14px!important;}
+ .hero .btn{margin-top:18px!important;}
+ .section,.site-shell,footer{background-color:transparent!important;}
+ .section[style*="background:var(--s)"]{background:transparent!important;backdrop-filter:none!important;}
+}
+@media(max-width:380px){.hero{min-height:485px!important;padding-top:133px!important;}}
+
+/* Final mobile refinements: remove timeline rules, close hero gap, improve legibility. */
+@media (max-width:700px){
+ .hero{min-height:0!important;padding-bottom:28px!important;}
+ .hero + .section{padding-top:12px!important;padding-bottom:28px!important;}
+ .hero + .section .eyebrow{font-size:12px!important;letter-spacing:.15em;line-height:1.5;}
+ .hero + .section h2{margin-top:8px!important;margin-bottom:14px!important;}
+ .hero + .section .countdown{margin-top:16px!important;}
+ .timeline-item{border-bottom:0!important;padding:15px 0!important;}
+ .timeline-item + .timeline-item{border-top:0!important;}
+ .timeline-item time{font-size:15px!important;line-height:1.45;}
+ .timeline-item strong{font-size:19px!important;line-height:1.35;}
+ .timeline-item p{font-size:15px!important;line-height:1.55;overflow-wrap:break-word;}
+ .transfer-note{font-size:15px!important;line-height:1.6;}
+ .lead,.info-card p{font-size:15px!important;line-height:1.65;}
+ label,.field-title{font-size:15px!important;}
+ .choice{font-size:14px!important;}
+ .small-note{font-size:13px!important;}
+}
+@media (max-width:380px){
+ .hero{min-height:0!important;padding-bottom:24px!important;}
+ .timeline-item{grid-template-columns:54px minmax(0,1fr)!important;gap:10px!important;}
+ .timeline-item strong{font-size:18px!important;}
+ .timeline-item p{font-size:14px!important;}
+}
+
+/* Mobile: close the empty gap between transfer details and guest dress code. */
+@media(max-width:700px){
+ .site-shell > .section:has(.transfer-note){padding-bottom:8px!important;}
+ .site-shell > .section:has(.info-card){padding-top:6px!important;padding-bottom:24px!important;}
+ .site-shell > .section .two-col:has(.info-card){margin:0 auto!important;}
+ .site-shell > .section:has(.transfer-note) .transfer-note{margin-bottom:0!important;}
+}
+
+/* Requested typography adjustments: keep all existing content and RSVP behavior. */
+.hero .date-line{font-size:clamp(18px,2.3vw,23px)!important;}
+.hero + .section h2{font-size:clamp(31px,4vw,42px)!important;}
+@media(max-width:700px){
+ .hero .date-line{font-size:20px!important;letter-spacing:.16em;}
+ .hero + .section h2{font-size:clamp(28px,7vw,36px)!important;}
+}
+/* Smaller countdown heading on mobile, leaving the desktop design unchanged. */
+@media(max-width:700px){
+ .hero + .section h2{font-size:clamp(24px,5.8vw,29px)!important;line-height:1.2!important;}
+}
+</style>
+</head>
+<body><div id="site-root">
+<p class="preview-note">5 июня 2027</p><div class="site-shell">
+<header class="hero"><div class="eyebrow">Будем счастливы разделить с вами день нашей свадьбы</div><h1>Александр <span class="amp">&</span><br>Юлия</h1><p class="date-line">05 · 06 · 2027</p><a class="btn primary" href="#rsvp">Ответить на приглашение ↓</a></header>
+<section class="section"><div class="eyebrow">Сохраняйте дату</div><h2>До нашей встречи</h2><div class="countdown"><div class="count-box"><strong id="days">—</strong><span>дней</span></div><div class="count-box"><strong id="hours">—</strong><span>часов</span></div><div class="count-box"><strong id="minutes">—</strong><span>минут</span></div><div class="count-box"><strong id="seconds">—</strong><span>секунд</span></div></div></section>
+<section class="section" style="background:var(--s);padding-left:clamp(18px,5vw,54px);padding-right:clamp(18px,5vw,54px)"><h2 style="font-size:clamp(38px,6vw,54px);margin:0 0 18px">План дня</h2><div class="timeline"><div class="timeline-item"><time>14:30</time><div><strong>Сбор гостей</strong><p><b>ЗАГС</b><br>Новочебоксарск, ул. Винокурова, 119</p></div></div><div class="timeline-item"><time>15:00</time><div><strong>Регистрация брака</strong></div></div><div class="timeline-item"><time>После</time><div><strong>Поздравления, фотографии и трансфер</strong><p>Поздравим молодожёнов и организованно отправимся от ЗАГСа к банкетному залу.</p></div></div><div class="timeline-item"><time>17:00</time><div><strong>Начало банкета</strong><p><b>Банкетный зал «Ассоль»</b><br>Чебоксары, парк «Амазония», просп. Максима Горького, 2М</p></div></div></div><div class="transfer-note">После регистрации будет организован трансфер от ЗАГСа до банкетного зала. Самостоятельно добираться до ресторана не потребуется.<br><br>После завершения торжества вечером будет организован обратный трансфер для гостей из Новочебоксарска.</div></section>
+<section class="section"><div class="two-col" style="grid-template-columns:1fr;max-width:700px;margin:30px auto 0"><article class="info-card"><h3>Образ гостей</h3><p>Наше торжество будет оформлено в следующей цветовой гамме:</p><div class="palette" aria-label="Цветовая палитра для образов гостей"><span title="Глубокий пурпурно-красный" style="background:#6f002c"></span><span title="Бежевый" style="background:#D8C3A5"></span><span title="Золотой" style="background:#C6A15B"></span><span title="Приглушённый розовый" style="background:#c98b8b"></span><span title="Приглушённый оливковый" style="background:#8A8B62"></span></div><p>При желании вы можете её поддержать. Но это совсем не обязательно — мы будем рады видеть вас в любом образе!</p></article></div></section>
+<section class="rsvp-wrap" id="rsvp"><h2>Вы придёте?</h2><p class="lead">Пожалуйста, заполните анкету — это поможет нам подготовить праздник и учесть ваши пожелания.</p><iframe name="rsvp-submit-frame" title="Отправка анкеты" style="display:none"></iframe>
+<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbw1IGZ5ZMuc7CS510adi_aSkYHC_vX4GZYl4GjuqAS1D_oHNf_gvOIVfIQpOyqJsh3J4g/exec" method="POST" target="rsvp-submit-frame">
+<div class="field"><label for="guest-name">1. Ваше имя и фамилия *</label><input id="guest-name" name="name" type="text" placeholder="Например, Анна Иванова" required></div>
+<div class="field"><span class="field-title">2. Сможете быть с нами? *</span><div class="choice-row"><label class="choice"><input type="radio" name="attendance" value="Буду" required> Да, буду!</label><label class="choice"><input type="radio" name="attendance" value="Не смогу"> К сожалению, не получится</label></div></div>
+<div class="field"><label for="plus-one">3. Если идёте не одни, укажите имя спутника / спутницы</label><input id="plus-one" name="companion" type="text" placeholder="Необязательно"></div>
+<div class="field"><span class="field-title">4. Нужен ли вам трансфер от ЗАГСа до банкетного зала? *</span><div class="choice-row"><label class="choice"><input type="radio" name="transfer" value="Да, нужен" required> Да, нужен</label><label class="choice"><input type="radio" name="transfer" value="Нет, доберусь самостоятельно"> Нет, доберусь самостоятельно</label></div></div>
+<div class="field"><span class="field-title">5. Какие напитки предпочитаете? Можно выбрать несколько</span><div class="choice-row"><label class="choice"><input type="checkbox" name="drinks" value="Шампанское"> Шампанское</label><label class="choice"><input type="checkbox" name="drinks" value="Белое вино"> Белое вино</label><label class="choice"><input type="checkbox" name="drinks" value="Красное вино"> Красное вино</label><label class="choice"><input type="checkbox" name="drinks" value="Водка"> Водка</label><label class="choice"><input type="checkbox" name="drinks" value="Коньяк"> Коньяк</label><label class="choice"><input type="checkbox" name="drinks" value="Виски"> Виски</label><label class="choice"><input type="checkbox" name="drinks" value="Без алкоголя"> Без алкоголя</label></div></div>
+<div class="field"><label for="food">6. Аллергии, ограничения в питании или особые пожелания</label><textarea id="food" name="food" rows="3" placeholder="Если есть, напишите здесь"></textarea></div><div class="field"><label for="song">7. Какую песню хотите услышать на свадьбе?</label><input id="song" name="song" type="text" placeholder="Название или исполнитель — по желанию"></div><div class="field"><label for="wishes">8. Пожелание молодожёнам или комментарий</label><textarea id="wishes" name="wishes" rows="3" placeholder="Можно оставить пустым"></textarea></div>
+<button class="btn" type="button" id="rsvp-submit">Отправить ответ</button><div id="form-message" role="status"></div><p class="small-note" style="margin-top:14px">Ваши ответы помогут нам подготовить праздник и учесть ваши пожелания.</p></form></section>
+<footer>С любовью, Александр и Юлия<small>5 июня 2027 · Будем рады видеть вас</small></footer></div></div>
+<script>
+function tick(){const t=new Date('2027-06-05T15:00:00+03:00').getTime();let d=Math.max(0,t-Date.now());const days=Math.floor(d/86400000);d%=86400000;const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000);d%=60000;document.getElementById('days').textContent=days;document.getElementById('hours').textContent=h;document.getElementById('minutes').textContent=m;document.getElementById('seconds').textContent=Math.floor(d/1000)}tick();setInterval(tick,1000);
+document.getElementById('rsvp-submit').addEventListener('click',function(){const f=document.getElementById('rsvp-form');if(!f.reportValidity())return;const m=document.getElementById('form-message');m.style.display='block';m.textContent='Отправляем анкету…';this.disabled=true;this.textContent='Отправляем…';f.submit();setTimeout(()=>{this.disabled=false;this.textContent='Отправить ответ';m.textContent='Спасибо за ответ!'},3000)});
+</script></body></html>
