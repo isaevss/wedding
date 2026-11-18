@@ -204,6 +204,41 @@ body{overscroll-behavior-y:none;}
   .palette{gap:13px;margin:18px auto 10px;}
   .palette span{width:36px;height:36px;flex:0 0 36px;}
 }
+
+/* Gentle first-screen entrance; original layout and palette are unchanged. */
+@keyframes wedding-arrive {
+  from { opacity:0; transform:translate3d(0,18px,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+@keyframes wedding-backdrop-arrive {
+  from { opacity:.55; }
+  to { opacity:1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero > .eyebrow, .hero > h1, .hero > .date-line, .hero > .btn {
+    animation:wedding-arrive .85s cubic-bezier(.22,1,.36,1) both;
+  }
+  .hero > .eyebrow { animation-delay:.18s; }
+  .hero > h1 { animation-delay:.42s; }
+  .hero > .date-line { animation-delay:.70s; }
+  .hero > .btn { animation-delay:.94s; }
+  @media (max-width:700px) {
+    body::before { animation:wedding-backdrop-arrive 1.35s ease-out both; }
+  }
+  .scroll-reveal-pending {
+    opacity:0;
+    transform:translate3d(0,22px,0);
+    transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1);
+    will-change:opacity,transform;
+  }
+  .scroll-reveal-pending.scroll-reveal-visible {
+    opacity:1;
+    transform:translate3d(0,0,0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero > *, .scroll-reveal-pending { animation:none!important;transition:none!important;opacity:1!important;transform:none!important; }
+}
 </style>
 </head>
 <body><div id="site-root">
@@ -225,4 +260,27 @@ body{overscroll-behavior-y:none;}
 <script>
 function tick(){const t=new Date('2027-06-05T15:00:00+03:00').getTime();let d=Math.max(0,t-Date.now());const days=Math.floor(d/86400000);d%=86400000;const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000);d%=60000;document.getElementById('days').textContent=days;document.getElementById('hours').textContent=h;document.getElementById('minutes').textContent=m;document.getElementById('seconds').textContent=Math.floor(d/1000)}tick();setInterval(tick,1000);
 document.getElementById('rsvp-submit').addEventListener('click',function(){const f=document.getElementById('rsvp-form');if(!f.reportValidity())return;const m=document.getElementById('form-message');m.style.display='block';m.textContent='Отправляем анкету…';this.disabled=true;this.textContent='Отправляем…';f.submit();setTimeout(()=>{this.disabled=false;this.textContent='Отправить ответ';m.textContent='Спасибо за ответ!'},3000)});
+
+/* Progressive enhancement: reveal sections as they enter view, once only.
+   Content remains visible when motion is disabled or IntersectionObserver is unavailable. */
+(function(){
+  if(!('IntersectionObserver' in window) ||
+     window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const targets=document.querySelectorAll('.site-shell > .section, .site-shell > .rsvp-wrap, .site-shell > footer');
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('scroll-reveal-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.06,rootMargin:'0px 0px -35px 0px'});
+  targets.forEach((el)=>{
+    // Do not conceal content that is already on screen at load time.
+    const r=el.getBoundingClientRect();
+    if(r.top < window.innerHeight - 35){ return; }
+    el.classList.add('scroll-reveal-pending');
+    observer.observe(el);
+  });
+})();
 </script></body></html>
