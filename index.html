@@ -240,42 +240,38 @@ body{overscroll-behavior-y:none;}
   .hero > *, .scroll-reveal-pending { animation:none!important;transition:none!important;opacity:1!important;transform:none!important; }
 }
 
-/* A real gradual lighting effect over the existing garland artwork.
-   Brightening is confined to the upper edge; no original colors are replaced. */
-@keyframes garland-ignite {
-  0%,10% { opacity:0; filter:brightness(.85) saturate(.9); }
-  35% { opacity:.25; }
-  58% { opacity:.62; }
-  75% { opacity:.52; }
-  100% { opacity:.82; filter:brightness(1.5) saturate(1.12); }
+/* The countdown may peek into the initial viewport on phones.
+   Reveal it only after the hero sequence finishes. */
+@media (prefers-reduced-motion: no-preference) {
+  .site-shell > .section:first-of-type {
+    animation:wedding-arrive 1.35s cubic-bezier(.22,1,.36,1) 3.15s both;
+  }
 }
+
+/* Warm light blooms only at the top of the invitation.
+   No duplicated backdrop or viewport-fixed image: the original garland
+   stays in the page background and scrolls away normally on mobile. */
 @keyframes garland-halo {
-  0%,15% { opacity:0; }
-  45% { opacity:.28; }
-  72% { opacity:.7; }
-  100% { opacity:.58; }
+  0%,12% { opacity:0; }
+  45% { opacity:.24; }
+  75% { opacity:.7; }
+  100% { opacity:.52; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  body::after {
-    content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
-    background-image:url('assets/site-backdrop.webp');
-    background-size:cover; background-position:center top; background-repeat:no-repeat;
-    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 7%,transparent 29%);
-    mask-image:linear-gradient(to bottom,#000 0%,#000 7%,transparent 29%);
-    mix-blend-mode:screen;
-    animation:garland-ignite 3.8s ease-in-out both;
-  }
   .hero::before {
-    content:"";position:absolute;top:0;left:0;right:0;height:220px;
-    pointer-events:none;z-index:0;
-    background:radial-gradient(ellipse 65% 60% at 50% 0%,rgba(255,210,127,.40),transparent 85%);
-    animation:garland-halo 4s ease-in-out both;
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:240px;
+    pointer-events:none;
+    z-index:0;
+    background:radial-gradient(ellipse 75% 75% at 50% 0%,rgba(255,221,151,.46),transparent 85%);
+    animation:garland-halo 3.8s ease-in-out both;
   }
 }
-@media (max-width:700px) {
-  body::after { background-size:cover; background-position:center top; }
+@media (prefers-reduced-motion:reduce) {
+  .hero::before { display:none!important; }
 }
-@media (prefers-reduced-motion:reduce) { body::after,.hero::before{animation:none!important;opacity:0!important;} }
 </style>
 </head>
 <body><div id="site-root">
